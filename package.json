@@ -1,0 +1,29 @@
+{
+  "name": "aluguel-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "cp -r src/* dist/ && cp package.json dist/ && cp package-lock.json dist/ && cp deploy.bat dist/ && cp .env dist/ && cp pm2.json dist/",
+    "test": "jest",
+    "start": "node ./src/server.js",
+    "start:prod": "pm2 start pm2.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "pg": "^8.11.5",
+    "pm2": "^5.3.1",
+    "postgres": "^3.4.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "jest": "^29.6.3",
+    "jest-junit": "^16.0.0"
+  }
+}
